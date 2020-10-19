@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_send_meme"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.silentnuke.navGraphViewmodels.ui.main.MainFragment"
+        android:label="selectImageFragment"
+        tools:layout="@layout/main_fragment" />
+
+    <navigation
+        android:id="@+id/nested"
+        app:startDestination="@id/selectImageFragment">
+        <fragment
+            android:id="@+id/selectImageFragment"
+            android:name="com.silentnuke.navGraphViewmodels.ui.main.FirstFragment"
+            android:label="selectImageFragment"
+            tools:layout="@layout/first_fragment">
+            <action
+                android:id="@+id/action_selectImage_to_sendMemeFragment"
+                app:destination="@id/sendMemeFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/sendMemeFragment"
+            android:name="com.silentnuke.navGraphViewmodels.ui.main.SecondFragment"
+            android:label="sendMemeFragment"
+            tools:layout="@layout/second_fragment" />
+    </navigation>
+</navigation>
